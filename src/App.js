@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from './components/Header';
 import Section1 from './components/Section1';
 import Section2 from './components/Section2';
@@ -32,37 +32,50 @@ function App() {
   // 팝업 상태
   const [ isPopUpOpen, setIsPopUpOpen ] = useState(true);
 
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const handler = () => {
+      document.body.style.height = viewport.height + "px";
+      document.documentElement.style.height = viewport.height + "px";
+    };
+
+    viewport.addEventListener("resize", handler);
+    handler();
+
+    return () => viewport.removeEventListener("resize", handler);
+  }, []);
 
   return (
+    
     <>
-      <div style={{ paddingBottom: "4.375rem" }}>
-        <Header
-          section2Ref={section2Ref}
-          section4Ref={section4Ref}
-          section10Ref={section10Ref}
-          section13Ref={section13Ref}
-          section14Ref={section14Ref}
-        />
-        <Section1 />
-        <Section2 ref={section2Ref} />
-        <Section3 />
-        <Section4 ref={section4Ref} />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <Section10 ref={section10Ref} />
-        <Section11 />
-        <Section12 />
-        <Section13 ref={section13Ref} />
-        <Section14 ref={section14Ref} />
-        <Section15 />
-        <Section16 />
-        <Section17 />
-        <Footer />
-        <TopBtn />
-      </div>
+      <Header
+        section2Ref={section2Ref}
+        section4Ref={section4Ref}
+        section10Ref={section10Ref}
+        section13Ref={section13Ref}
+        section14Ref={section14Ref}
+      />
+      <Section1 />
+      <Section2 ref={section2Ref} />
+      <Section3 />
+      <Section4 ref={section4Ref} />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
+      <Section9 />
+      <Section10 ref={section10Ref} />
+      <Section11 />
+      <Section12 />
+      <Section13 ref={section13Ref} />
+      <Section14 ref={section14Ref} />
+      <Section15 />
+      <Section16 />
+      <Section17 />
+      <Footer />
+      <TopBtn />
       <BottomNav />
       
       {isPopUpOpen && <PopUp onClose={() => setIsPopUpOpen(false)} />}
