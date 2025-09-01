@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./BottomNav.module.scss";
 import iconPhone from "../resources/iconPhone.png";
@@ -6,6 +6,23 @@ import iconPhoneOrange from "../resources/iconPhoneOrange.png";
 
 function BottomNav() {
   const form = useRef();
+
+  // 모바일 엣지브라우저 인풋 클릭 시 키보드 올라오면서 하단 주소창 사라져서 발생하는 하얀 여백 문제 처리
+  const bottomNavRef = useRef(null);
+  useEffect(() => {
+    const onResize = () => {
+      if (!bottomNavRef.current) return;
+      if (window.innerHeight < window.screen.height) {
+        bottomNavRef.current.style.position = "absolute";
+      } else {
+        bottomNavRef.current.style.position = "fixed";
+      }
+    };
+  
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  // -끝-
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -37,7 +54,7 @@ function BottomNav() {
   };
   
   return (
-    <div className={styles.container}>
+    <div ref={bottomNavRef} className={styles.container}>
       <div className={styles.wrap}>
         <div className={styles.phoneBox}>
           <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />

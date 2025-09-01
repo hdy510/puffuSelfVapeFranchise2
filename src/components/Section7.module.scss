@@ -264,6 +264,16 @@
 
 
 // 반응형
+@media (max-width: 1920px) {
+  .kioskImgBox {
+    .dimmed {
+      display: none;
+    }
+    .kioskDemo {
+      display: none;
+    }
+  }
+}
 @media (max-width: 1280px) {
   .tabContentSection {
     flex-direction: column;

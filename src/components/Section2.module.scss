@@ -351,7 +351,8 @@
     }
   }
   .biggestTxt {
-    font-size: clamp(2rem, 6vw, 4.75rem);
+    font-size: clamp(2.8rem, 6vw, 4.75rem);
+    padding: 0.4rem 0.4rem 0 0.4rem;
   }
   .arrowBox {
     padding: 3rem 0;
