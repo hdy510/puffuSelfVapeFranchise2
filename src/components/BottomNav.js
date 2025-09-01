@@ -7,22 +7,6 @@ import iconPhoneOrange from "../resources/iconPhoneOrange.png";
 function BottomNav() {
   const form = useRef();
 
-  // 🔽 포커스 시 scrollIntoView 보정
-  useEffect(() => {
-    const inputs = document.querySelectorAll("input, textarea");
-    const handleFocus = (e) => {
-      setTimeout(() => {
-        e.target.scrollIntoView({ block: "center", behavior: "smooth" });
-      }, 300); // 키보드 애니메이션 시간 고려
-    };
-
-    inputs.forEach((el) => el.addEventListener("focus", handleFocus));
-
-    return () => {
-      inputs.forEach((el) => el.removeEventListener("focus", handleFocus));
-    };
-  }, []);
-  // 🔼 끝
 
   const sendEmail = (e) => {
     e.preventDefault();
