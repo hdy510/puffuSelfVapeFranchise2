@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import KakaoMapScriptLoader from "./components/KakaoMapScriptLoader";
 import Header from './components/Header';
 import Section1 from './components/Section1';
 import Section2 from './components/Section2';
@@ -35,7 +34,6 @@ function App() {
 
   return (
     <>
-      {/* <KakaoMapScriptLoader /> */}
       <Header
         section2Ref={section2Ref}
         section4Ref={section4Ref}
