@@ -24,7 +24,7 @@ function BottomNav() {
       //   const keyboardHeight = window.innerHeight - viewport.height;
       //   setBottomOffset(keyboardHeight > 0 ? keyboardHeight : 300);
       // } else {
-        setBottomOffset(-112);
+        setBottomOffset(-56);
       // }
     };
 
