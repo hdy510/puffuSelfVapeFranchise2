@@ -3,10 +3,11 @@ import emailjs from "@emailjs/browser";
 import styles from "./BottomNav.module.scss";
 import iconPhone from "../resources/iconPhone.png";
 import iconPhoneOrange from "../resources/iconPhoneOrange.png";
+import useBottomNavFix from "../utils/useBottomNavFix";
 
 function BottomNav() {
   const form = useRef();
-
+  const bottomOffset = useBottomNavFix();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -38,8 +39,9 @@ function BottomNav() {
   };
   
   return (
-    <div className={styles.pageWrapper}>
-      <div className={styles.container}>
+      <div className={styles.container}
+        style={{ bottom: `${bottomOffset}px` }} 
+      >
         <div className={styles.wrap}>
           <div className={styles.phoneBox}>
             <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />
@@ -96,7 +98,6 @@ function BottomNav() {
           </form>
         </div>
       </div>
-    </div>
   );
 }
 

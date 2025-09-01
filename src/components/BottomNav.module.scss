@@ -1,10 +1,3 @@
-.pageWrapper {
-  width: 100%;
-  height: calc(var(--vh) * 100); // 주소창 변동 반영
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
 .container {
   width: 100%;
   height: 4.375rem;
@@ -13,6 +6,7 @@
   left: 0;
   z-index: 1000;
   background-color: #212225;
+  transition: bottom 0.2s ease;
 }
 .wrap {
   max-width: 80rem;
