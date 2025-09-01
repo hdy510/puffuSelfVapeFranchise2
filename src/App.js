@@ -21,7 +21,6 @@ import Footer from './components/Footer';
 import TopBtn from './components/TopBtn';
 import PopUp from './components/PopUp';
 import BottomNav from './components/BottomNav';
-import useVh from "./utils/useVh";
 
 
 function App() {
@@ -33,8 +32,7 @@ function App() {
   // 팝업 상태
   const [ isPopUpOpen, setIsPopUpOpen ] = useState(true);
 
-  useVh();
-  
+
   return (
     <>
       <Header
