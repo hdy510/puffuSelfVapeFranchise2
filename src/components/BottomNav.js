@@ -3,33 +3,11 @@ import emailjs from "@emailjs/browser";
 import styles from "./BottomNav.module.scss";
 import iconPhone from "../resources/iconPhone.png";
 import iconPhoneOrange from "../resources/iconPhoneOrange.png";
+import useVh from "../utils/useVh";
 
 function BottomNav() {
   const form = useRef();
-
-  // 모바일 엣지브라우저 인풋 클릭 시 키보드 올라오면서 하단 주소창 사라져서 발생하는 하얀 여백 문제 처리
-  const bottomNavRef = useRef(null);
-  useEffect(() => {
-    const onFocusIn = () => {
-      if (bottomNavRef.current) {
-        bottomNavRef.current.style.position = "absolute";
-      }
-    };
-    const onFocusOut = () => {
-      if (bottomNavRef.current) {
-        bottomNavRef.current.style.position = "fixed";
-      }
-    };
-  
-    window.addEventListener("focusin", onFocusIn);
-    window.addEventListener("focusout", onFocusOut);
-  
-    return () => {
-      window.removeEventListener("focusin", onFocusIn);
-      window.removeEventListener("focusout", onFocusOut);
-    };
-  }, []);
-  // -끝-
+  useVh();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -61,7 +39,7 @@ function BottomNav() {
   };
   
   return (
-    <div ref={bottomNavRef} className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.wrap}>
         <div className={styles.phoneBox}>
           <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />

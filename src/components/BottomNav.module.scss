@@ -6,6 +6,7 @@
   left: 0;
   z-index: 1000;
   background-color: #212225;
+  max-height: calc(var(--vh) * 100);
 }
 .wrap {
   max-width: 80rem;
