@@ -38,61 +38,63 @@ function BottomNav() {
   };
   
   return (
-    <div className={styles.container}>
-      <div className={styles.wrap}>
-        <div className={styles.phoneBox}>
-          <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />
-          <p className={styles.phoneNumber}>070-4242-2000</p>
+    <div className={styles.pageWrapper}>
+      <div className={styles.container}>
+        <div className={styles.wrap}>
+          <div className={styles.phoneBox}>
+            <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />
+            <p className={styles.phoneNumber}>070-4242-2000</p>
+          </div>
+          <form ref={form} noValidate className={styles.formBox} onSubmit={sendEmail}>
+            <div className={styles.inputSection}>
+              <div className={styles.inputBox}>
+                <input
+                  type="text"
+                  name="이름"
+                  placeholder="성함"
+                  required
+                  className={styles.inputTag}
+                />
+              </div>
+            </div>
+            <div className={styles.inputSection}>
+              <div className={styles.inputBox}>
+                <input
+                  type="tel"
+                  name="연락처"
+                  placeholder="연락처"
+                  required
+                  className={styles.inputTag}
+                />
+              </div>
+            </div>
+            <div className={styles.inputSection}>
+              <div className={styles.inputBox}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="이메일"
+                  required
+                  className={styles.inputTag}
+                />
+              </div>
+            </div>
+  
+            <label className={styles.agreeBox}>
+              <input
+                type="checkbox"
+                name="privacy_agree"
+                className={styles.agreeBoxInput}
+              />
+              개인정보처리방침 동의
+            </label>
+  
+            <button type="submit" className={styles.submitBtn}>
+              <img src={iconPhone} alt="전화 아이콘" className={styles.submitBtnIcon} />
+              <p className={styles.submitBtnTxt}>문의하기</p>
+            </button>
+          </form>
         </div>
-        <form ref={form} noValidate className={styles.formBox} onSubmit={sendEmail}>
-          <div className={styles.inputSection}>
-            <div className={styles.inputBox}>
-              <input
-                type="text"
-                name="이름"
-                placeholder="성함"
-                required
-                className={styles.inputTag}
-              />
-            </div>
-          </div>
-          <div className={styles.inputSection}>
-            <div className={styles.inputBox}>
-              <input
-                type="tel"
-                name="연락처"
-                placeholder="연락처"
-                required
-                className={styles.inputTag}
-              />
-            </div>
-          </div>
-          <div className={styles.inputSection}>
-            <div className={styles.inputBox}>
-              <input
-                type="email"
-                name="email"
-                placeholder="이메일"
-                required
-                className={styles.inputTag}
-              />
-            </div>
-          </div>
-
-          <label className={styles.agreeBox}>
-            <input
-              type="checkbox"
-              name="privacy_agree"
-              className={styles.agreeBoxInput}
-            />
-            개인정보처리방침 동의
-          </label>
-
-          <button type="submit" className={styles.submitBtn}>
-            <img src={iconPhone} alt="전화 아이콘" className={styles.submitBtnIcon} />
-            <p className={styles.submitBtnTxt}>문의하기</p>
-          </button>
-        </form>
       </div>
     </div>
   );
