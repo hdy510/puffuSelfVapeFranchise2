@@ -1,0 +1,139 @@
+.container {
+  width: 100%;
+  background-image: url("../resources/bgNightscape.png");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-bottom: 4rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+
+.contentsWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.storeList {
+  width: 45%;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 0.625rem;
+}
+.scrollWrap {
+  max-height: 31.25rem;
+  overflow: auto;
+}
+.storeBox {
+  background-color: #fff;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.storeImg {
+  width: 10rem;
+  height: 10rem;
+}
+.storeInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.heading4 {
+  font-size: 1.375rem;
+  color: var(--color-main);
+}
+.storeInfoDetail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  p {
+    font-size: 0.938rem;
+    color: #444;
+    padding-top: 0.2rem;
+  }
+}
+
+.map {
+  width: 52%;
+  height: 34.25rem;
+  border-radius: 0.625rem;
+}
+
+
+
+
+
+// 반응형
+@media (max-width: 1280px) {
+  .storeBox {
+    // flex-direction: column;
+  }
+  .storeImg {
+    width: clamp(5rem, 8vw, 15rem);
+    height: clamp(5rem, 8vw, 15rem);;
+  }
+}
+@media (max-width: 768px) {
+  .wrap {
+    padding: 5rem 2.813rem 5rem;
+  }
+  .contentsWrap {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .storeList {
+    width: 100%;
+    height: 20rem;
+  }
+  .scrollWrap {
+    max-height: 18rem;
+  }
+  .storeBox {
+    flex-direction: row;
+  }
+  .map {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+  .titleBox {
+    padding-bottom: 3rem;
+  }
+  .storeBox {
+    flex-direction: column;
+  }
+  .storeInfoBox {
+    gap: 0.3rem;
+  }
+  .heading4 {
+    padding-bottom: 0.2rem;
+  }
+  .storeInfoDetail {
+    p {
+      font-size: 0.875rem;
+      padding-top: 0.35rem;
+    }
+  }
+  .map {
+    height: 20rem;
+  }
+}

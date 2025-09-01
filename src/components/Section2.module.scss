@@ -1,0 +1,395 @@
+.container {
+  width: 100%;
+  background: linear-gradient(180deg,rgba(37, 37, 39, 1) 0%, rgba(16, 17, 23, 1) 100%);
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 0;
+}
+.part1, .part2 {
+  padding-bottom: 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+  &.heading1 {
+    font-size: clamp(2.95rem, 4vw, 4rem);
+  }
+}
+.orangeText {
+  color: var(--color-main);
+}
+.subTitle {
+  font-size: clamp(1rem, 1.7vw, var(--subTitle-font-size));
+  line-height: 1.5;
+  word-break: keep-all;
+  &.heading1Sub {
+    font-size: clamp(1.2rem, 1.63vw, 1.625rem);
+  }
+}
+
+.cardBox {
+  padding: clamp(5rem, 6.9vw, 7rem) 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftBox {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  align-items: center;
+}
+.rightBox {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  align-items: center;
+}
+.cardBoxTitle {
+  // font-size: 1.35rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  background-color: #373741;
+  border-radius: 6.25rem;
+  width: fit-content;
+  padding: 1rem 2rem 0.9rem 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.cardBoxImage {
+  background-color: #373741;
+  border-radius: 0.875rem;
+  // width: 25.875rem;
+  width: 100%;
+  // height: 21.625rem;
+  height: clamp(16rem, 20vw, 21.625rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: clamp(10rem, 15vw, 15rem);
+
+  }
+}
+.cardBoxReference {
+  font-size: 1rem;
+  color: var(--color-gray-bright);
+  font-weight: 500;
+  text-align: center;
+}
+.centerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.centerBoxTxt {
+  text-align: center;
+  font-size: 1.563rem;
+  &.last {
+    font-weight: 700;
+    font-size: 3.125rem;
+    padding-top: 0.625rem;
+  }
+}
+.centerBoxReference {
+  font-size: 1.125rem;
+  color: var(--color-gray-bright);
+  font-weight: 500;
+  text-align: center;
+  padding-top: 1rem;
+}
+.bigTxt {
+  font-weight: 700;
+  font-size: 3.125rem;
+}
+.biggestTxt {
+  font-size: 4.75rem;
+  background-color: var(--color-main);
+  padding: 0.625rem 0.625rem 0 0.625rem;
+  animation: blink 0.8s infinite alternate;
+}
+.circleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 6rem);
+  padding: 6rem 0;
+}
+.leftCircleBoxWrap {
+  width: 18.75rem;
+  height: 18.75rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftCircleBoxNum {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.375rem;
+  font-weight: 700;
+}
+.rightCircleBoxWrap {
+  width: 18.75rem;
+  height: 18.75rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expandCircle1, .expandCircle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.3;
+}
+.expandCircle1 {
+  // transform: translate(-50%, -50%) scale(1.1);
+  animation: expand1 1s ease-in-out infinite alternate;
+}
+.expandCircle2 {
+  // transform: translate(-50%, -50%) scale(1.2);
+  animation: expand2 1s ease-in-out infinite alternate;
+}
+@keyframes expand1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+@keyframes expand2 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+
+
+.rightCircleBoxNum {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.625rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.circleBoxLabel {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--color-gray-bright);
+  padding-top: clamp(1rem, 2vw, 4rem);
+  text-align: center;
+}
+.arrowBox {
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.arrowBoxSubBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // gap: 2rem;
+  gap: clamp(0.5rem, 2.5vw, 2rem);
+}
+.arrowBoxWhiteTxt {
+  // font-size: 2.875rem;
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 700;
+  width: clamp(14rem, 25vw, 18.75rem);
+  text-align: center;
+}
+.arrowBoxWhiteGradientTxt {
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 700;
+  background: var(--linear-gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 0.2rem;
+  animation: blink 0.8s infinite alternate;
+}
+.arrowBundle {
+}
+.arrowBundle img {
+  height: clamp(1.5rem, 3.5vw, 3rem);
+  opacity: 0;
+  &:nth-child(1) {
+    animation: arrowOpacity 3s ease-in-out infinite;
+  }
+  &:nth-child(2) {
+    animation: arrowOpacity 3s 0.2s ease-in-out infinite;
+  }
+  &:nth-child(3) {
+    animation: arrowOpacity 3s 0.4s ease-in-out infinite;
+  }
+  &:nth-child(4) {
+    animation: arrowOpacity 3s 0.6s ease-in-out infinite;
+  }
+  &:nth-child(5) {
+    animation: arrowOpacity 3s 0.8s ease-in-out infinite;
+  }
+}
+@keyframes arrowOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+   100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+// 반응형
+@media (max-width: 1280px) {
+  .cardBox {
+    padding: clamp(5rem, 6.9vw, 7rem) clamp(2rem, 4vw, 10rem);
+  }
+  .centerBoxTxt {
+    font-size: clamp(1rem, 3vw, 1.563rem);
+  }
+  .bigTxt {
+    // font-size: 2.5rem;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  .biggestTxt {
+    font-size: 3.7rem;
+  }
+  .centerBoxReference {
+    font-size: 1rem;
+  }
+  .leftCircleBoxWrap, .rightCircleBoxWrap {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 768px) {
+  .wrap {
+    padding: 4rem 2.8rem 0;
+  }
+  .titleBox {
+    gap: 0.8rem;
+  }
+  .title {
+    &.heading1 {
+      font-size: clamp(1.8rem, 6vw, 2.95rem);
+    }
+  }
+  .subTitle {
+    &.heading1Sub {
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+  }
+  .leftBox, .rightBox {
+    width: 100%;
+    max-width: 20rem;
+  }
+  .cardBox {
+    padding: clamp(2rem, 6.9vw, 7rem) clamp(2rem, 4vw, 10rem) 6rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .cardBoxTitle {
+    font-size: 1rem;
+  }
+  .cardBoxReference {
+    font-size: 0.8rem;
+  }
+  .centerBox {
+    gap: 1.5rem;
+  }
+  .centerBoxReference {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding-top: 0.4rem;
+  }
+  .centerBoxTxt {
+    &.last {
+      font-size: clamp(1.5rem, 6vw, 3.125rem);
+    }
+  }
+  .biggestTxt {
+    font-size: clamp(2rem, 6vw, 4.75rem);
+  }
+  .arrowBox {
+    padding: 3rem 0;
+    gap: 1rem;
+  }
+  .arrowBundle img {
+    height: clamp(1rem, 3.5vw, 1.5rem);
+  }
+  .arrowBoxSubBox {
+    gap: 1rem;
+  }
+  .arrowBoxWhiteTxt {
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    width: clamp(8rem, 22vw, 18.75rem);
+  }
+  .arrowBoxWhiteGradientTxt {
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+  }
+  .circleBox {
+    gap: 0rem;
+    padding: clamp(2rem, 6.9vw, 7rem) 0;
+  }
+  .leftCircleBox, .rightCircleBox {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .leftCircleBoxWrap, .rightCircleBoxWrap {
+    width: clamp(16rem, 20vw, 18.75rem);
+    transform: scale(0.6);
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 0;
+  }
+  .leftCircleBoxWrap, .rightCircleBoxWrap {
+    transform: scale(0.5);
+  }
+}

@@ -1,0 +1,146 @@
+.container {
+  width: 100%;
+  background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(27, 27, 32, 1) 100%);
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-bottom: 5rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+.orangeText {
+  color: var(--color-main);
+  white-space: nowrap;
+}
+.diagramBox {
+  max-width: 49.375rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.diagramTitle {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+.dummy {
+  width: 50%;
+}
+.diagramTitleTxt {
+  width: 25%;
+  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+.firstUl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.secondUl {
+  display: flex;
+  align-items: center;
+  background-color: #2A2A2E;
+  border: 0.063rem solid rgba($color: #737373, $alpha: 0.4);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+.secondLi1, .secondLi2, .secondLi3 {
+  text-align: center;
+}
+.secondLi1 {
+  width: 50%;
+  font-size: clamp(1.063rem, 2vw, 1.25rem);
+  color: #bcbcbc;
+}
+.secondLi2, .secondLi3 {
+  width: 25%;
+  font-size: clamp(1.063rem, 2vw, 1.25rem);
+  color: #6b625f;
+}
+.diagramPuffu {
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg,rgba(254, 116, 31, 1) 0%, rgba(254, 88, 31, 1) 100%);
+  border-radius: 0.5rem;
+  border: 0.063rem solid rgba($color: #ffe7da, $alpha: 0.4);
+  box-shadow: 0 0 0.563rem rgba($color: #FFAE96, $alpha: 0.5);
+}
+.diagramPuffuLogo {
+  width: 50%;
+  text-align: center;
+}
+.puffuImg {
+}
+.diagramPuffuTxt {
+  width: 25%;
+  font-size: clamp(1.5rem, 1.5vw, 1.875rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+
+
+// 반응형
+@media (max-width: 768px) {
+  .wrap {
+    padding: 5rem 2.813rem 5rem;
+  }
+  .diagramBox {
+    gap: 1rem;
+  }
+  .diagramPuffu {
+    padding: 1.5rem 0.3rem;
+  }
+  .dummy {
+    width: 36%;
+  }
+  .diagramTitle {
+    padding: 0 0.3rem;
+  }
+  .diagramTitleTxt {
+    width: 32%;
+  }
+  .secondUl {
+    padding: 1.1rem 0.3rem;
+  }
+  .secondLi1 {
+    width: 36%;
+    font-size: 1rem;
+  }
+  .secondLi2, .secondLi3 {
+    font-size: 1rem;
+  }
+  .diagramPuffuLogo {
+    width: 36%;
+  }
+  .secondLi2, .secondLi3 {
+    width: 32%;
+  }
+  .puffuImg {
+    width: clamp(5.5rem, 10vw, 12rem);
+  } 
+  .diagramPuffuTxt {
+    width: 30%;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+}

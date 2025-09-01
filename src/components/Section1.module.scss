@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 80dvh;
+  background-color: rgb(207, 207, 207);
+  position: relative;
+}
+.videoBox {
+  overflow: hidden;
+  height: 100%;
+  // background-image: url("../resources/heroThumbnail.png");
+  // background-size: cover;
+  // background-position: center center;
+  background-color: #252527;
+}
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.dimmed {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 768px) {
+  .logo {
+    width: clamp(10rem, 40vw, 20rem);
+  }
+}

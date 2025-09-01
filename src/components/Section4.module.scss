@@ -1,0 +1,216 @@
+.container {
+  width: 100%;
+  background: linear-gradient(0deg,rgba(16, 17, 23, 1) 0%, rgba(37, 37, 39, 1) 100%);
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-bottom: 5rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+.titleSeconRow {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+}
+.puffuImg {
+  height: clamp(3rem, 6vw, 5.2rem);
+}
+.titleSeconRowTxt {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+.meritsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.meritsEach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 1.5vw, 2rem);
+  border-radius: 0.75rem;
+  padding: clamp(2rem, 3vw, 3rem) 2rem clamp(1rem, 1.5vw, 2rem);
+  // background-color: #282A30;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  &.index0 {
+  background-image: url("../resources/bgMerit1.png");
+  }
+  &.index1 {
+  background-image: url("../resources/bgMerit2.png");
+  }
+  &.index2 {
+  background-image: url("../resources/bgMerit3.png");
+  }
+  &.index3 {
+  background-image: url("../resources/bgMerit4.png");
+  }
+  &.index4 {
+  background-image: url("../resources/bgMerit5.png");
+  }
+
+  .hoverBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282A30;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 0;
+  }
+  .meritsId,
+  .meritsTitle,
+  .meritsSubTitle,
+  .hoverContents {
+    position: relative;
+    z-index: 1;
+  }
+}
+.meritsId {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 700;
+  background-color: var(--color-main);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6.25rem;
+  width: fit-content;
+}
+.meritsTitle {
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  font-weight: 700;
+}
+.meritsSubTitle {
+  // font-size: 1.125rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  text-align: center;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.hoverContents {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  gap: 5rem;
+  transition: max-height 0.7s ease, opacity 0.7s ease;
+}
+.detailBox {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0rem, 5vw, 4rem);
+  padding-top: 1rem;
+  .roundTitle {
+    font-size: clamp(1.1rem, 1.5vw, 1.313rem);
+    padding: clamp(0.8rem, 0.8vw, 0.8rem) clamp(1.5rem, 1.5vw, 2rem);
+    font-weight: 700;
+    background-color: #373741;
+    border-radius: 6.25rem;
+    white-space: nowrap;
+    &.orange {
+      background-color: var(--color-main);
+    }
+  }
+  .detailSubBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .detailImg {
+    // width: fit-content;
+    width: 100%;
+    max-width: 50rem;
+    padding-bottom: 1rem;
+  }
+  .detailDescription {
+    text-align: center;
+    padding-bottom: 1rem;
+    color: #aaaaaa;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    word-break: keep-all;
+  }
+}
+
+
+
+// 반응형
+@media (max-width: 768px) {
+  .wrap {
+    padding: 5rem 2.813rem 0;
+  }
+  .detailBox {
+    .roundTitle {
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+    }
+    .detailImg {
+    }
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 0;
+  }
+  .titleBox {
+    padding-bottom: 3rem;
+  }
+  .title {
+    font-size: clamp(1.5rem, 6vw, var(--title-font-size));
+  }
+  .puffuImg {
+    height: clamp(2.5rem, 5vw, 5.2rem);
+  }
+  .titleSeconRow {
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  }
+  .titleSeconRowTxt {
+    font-size: clamp(1.5rem, 6vw, var(--title-font-size));
+  }
+  .meritsSubTitle {
+    font-size: 0.875rem;
+  }
+  .hoverContents {
+    max-height: none;
+    overflow: visible;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .detailBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    .roundTitle {
+      margin-top: 1rem;
+    }
+    .detailSubBox {
+      gap: 0.5rem;
+    }
+    .detailImg {
+      height: 7rem;
+      width: auto;
+      // height: auto;
+      // width: 100%;
+      // max-width: 100%;
+    }
+  }
+
+}

@@ -1,0 +1,176 @@
+.container {
+  width: 100%;
+  background-image: url("../resources/bgLight.png");
+  background-size: cover;
+  background-position: center center;
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.limitedBenefit {
+  width: 70vw;
+  max-width: fit-content;
+}
+.titleBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.titleTxt {
+  font-size: clamp(3rem, 6vw, 4.25rem);
+  font-weight: 700;
+}
+.priceCard {
+  width: clamp(12rem, 25vw, 23rem);
+  animation: blink 0.8s infinite alternate;
+}
+.subTxt {
+  text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #eee;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.diagramBox {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.diagramTitle {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+.diagramTitleTxt {
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 33%;
+}
+
+.firstUl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.secondUl {
+  display: flex;
+  align-items: center;
+  background-color: #1C1E27;
+  border: 0.063rem solid rgba($color: #737373, $alpha: 0.4);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+.secondLi1, .secondLi2, .secondLi3 {
+  text-align: center;
+  width: 33%;
+}
+.secondLi1 {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: #898482;
+}
+.secondLi2{
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: #BCBCBC;
+}
+.secondLi3 {
+  font-size: clamp(1.3rem, 2vw, 1.688rem);
+  color: var(--color-main);
+  font-weight: 700;
+}
+
+.ps {
+  font-size: 1rem;
+  color: #aaa;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+   100% {
+    opacity: 1;
+  }
+}
+
+
+
+// 반응형
+@media (max-width: 768px) {
+  .wrap {
+    padding: 7rem 2.813rem 7rem;
+  }
+  .titleTxt {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+  .priceCard {
+    width: clamp(8rem, 25vw, 12rem);
+  }
+  .diagramTitleTxt {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  }
+  .secondLi1 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  .secondLi2{
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  .secondLi3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+  .titleBox {
+    flex-direction: column;
+  }
+  .titleTxt {
+    font-size: 2.2rem;
+  }
+  .priceCard {
+    width: 11rem;
+  }
+  .diagramTitle {
+    padding: 0 0.5rem;
+  }
+  .diagramTitleTxt {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+  }
+  .secondUl {
+    padding: 1rem 0.5rem;
+  }
+  .secondLi1 {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  .secondLi2{
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  .secondLi3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  .ps {
+    font-size: 0.875rem;
+  }
+}

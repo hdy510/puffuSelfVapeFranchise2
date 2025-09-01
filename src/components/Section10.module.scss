@@ -1,0 +1,334 @@
+.container {
+  width: 100%;
+  background-image: url("../resources/bgNightCity.png");
+  background-size: cover;
+  background-position: center center;
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-bottom: 5rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+.orangeText {
+  color: var(--color-main);
+}
+.subTitle {
+  font-size: clamp(1rem, 1.7vw, var(--subTitle-font-size));
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.packageCardBox {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  gap: clamp(1.8rem, 3.5vw, 2.8rem);
+  padding-bottom: 8rem;
+}
+.topBox {
+  display: flex;
+  justify-content: space-between;
+}
+.basicCard, .allInOneCard {
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.basicCard {
+  width: 39%;
+}
+.allInOneCard {
+  width: 56%;
+}
+.packageName {
+  background-color: #2D2D2D;
+  font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  text-align: center;
+  padding: clamp(1rem, 2.5vw, 1.5rem) 0 1.2rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  &.allInOne {
+    background: var(--linear-gradient-orange)
+  }
+}
+.packageContentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  img {
+    width: inherit;
+  }
+}
+.price {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: #2d2d2d;
+  font-weight: 700;
+  &.allInOne {
+    color: var(--color-main);
+  };
+}
+.include {
+  font-size: clamp(1rem, 1.5vw, 1.188rem);
+  color: #777;
+  padding-bottom: 1rem;
+}
+.bottomBox {
+  border-radius: 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 3rem;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(1rem, 2vw, 3rem);
+}
+.bottomBoxList {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+}
+.listEach {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.8rem);
+}
+.bottomBoxTxt {
+  color: #373737;
+  font-size: clamp(0.8rem, 1.8vw, 1.375rem);
+  font-weight: 700;
+}
+.relative {
+  position: relative;
+}
+.cancelLine {
+  width: clamp(4rem, 9vw, 7rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottomBoxPrice {
+  color: #c4c4c4;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+}
+.allText {
+  font-size: clamp(1rem, 2.8vw, 1.938rem);
+  color: #373737;
+  font-weight: 700;
+  animation: blink 0.8s infinite alternate;
+}
+.allTextOrange {
+  font-size: 2.688rem;
+  font-size: clamp(1.3rem, 3.4vw, 2.688rem);
+  color: var(--color-main);
+}
+
+
+
+.diagramBox {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.diagramTitle {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+.dummy {
+  width: 35%;
+}
+.diagramTitleTxt {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  word-break: keep-all;
+  &.index0 {
+    width: 40%;
+  }
+  &.index1 {
+    width: 25%;
+  }
+}
+.diagramTitleTxtSmall {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  word-break: keep-all;
+}
+.firstUl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.secondUl {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 0.063rem solid rgba($color: #737373, $alpha: 0.4);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+.secondLi1, .secondLi2, .secondLi3 {
+  text-align: center;
+}
+.secondLi1 {
+  width: 35%;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #9d9d9d;
+  word-break: keep-all;
+}
+.secondLi2{
+  width: 40%;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #6b625f;
+}
+.secondLi3 {
+  width: 25%;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #6b625f;
+}
+.diagramPuffu {
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg,rgba(254, 116, 31, 1) 0%, rgba(254, 88, 31, 1) 100%);
+  border-radius: 0.5rem;
+  border: 0.063rem solid rgba($color: #ffe7da, $alpha: 0.4);
+  box-shadow: 0 0 0.563rem rgba($color: #FFAE96, $alpha: 0.5);
+}
+.diagramPuffuLogo {
+  width: 35%;
+  text-align: center;
+  img {
+    width: 50%;
+    max-width: 10rem;
+    min-width: 5rem;
+  }
+}
+.diagramPuffuTxt {
+  font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  text-align: center;
+  &.index0 {
+    width: 40%;
+  }
+  &.index1 {
+    width: 25%;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+   100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+// 반응형
+@media (max-width: 1280px) {
+  .packageContentBox {
+    img {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .wrap {
+    padding: 5rem 2.813rem 5rem;
+  }
+  .titleBox {
+    padding-bottom: 3rem;
+  }
+  .packageCardBox {
+    gap: 1.5rem;
+  }
+  .topBox {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .basicCard, .allInOneCard {
+    width: 100%;
+  }
+  .basicCard {
+    .packageContentBox {
+      img {
+        width: 63%;
+        max-width: 17.063rem;
+      }
+    }
+  }
+  .allInOneCard {
+    .packageContentBox {
+      img {
+        max-width: 26rem;
+      }
+    }
+  }
+  .bottomBox {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .bottomBoxList {
+    gap: 1rem;
+  }
+  .listEach {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .bottomBoxTxt {
+    font-size: clamp(0.95rem, 2.3vw, 1.1rem);
+  }
+  .cancelLine {
+    width: 6rem;
+  }
+  .bottomBoxPrice {
+    font-size: 0.95rem;
+  }
+  .allText {
+    font-size: 1.8rem;
+  }
+  .allTextOrange {
+    font-size: 2.2rem;
+  }
+  .diagramPuffuTxt {
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+  .cancelLine {
+    width: 5rem;
+  }
+}

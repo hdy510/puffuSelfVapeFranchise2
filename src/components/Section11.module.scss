@@ -1,0 +1,287 @@
+.container {
+  width: 100%;
+  background-image: url("../resources/bgCircle.png");
+  background-size: cover;
+  background-position: center center;
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-bottom: 10rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+  word-break: keep-all;
+}
+.orangeText {
+  color: var(--color-main);
+}
+.subTitle {
+  font-size: clamp(1rem, 1.7vw, var(--subTitle-font-size));
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.diagramBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rem;
+  height: 40.125rem;
+  position: relative;
+}
+.smile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.diagramImgBox {
+  width: 40.125rem;
+  height: 40.125rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.diagramImgBox img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.diagramTxtBoxWrap {
+  width: 40.125rem;
+  height: 40.125rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.diagramSubTxt {
+  font-size: 1rem;
+  color: #aaa;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.diagramTxtBox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  &.index0 {
+    top: 0%;
+    right: 64%;
+    align-items: flex-end;
+  }
+  &.index1 {
+    right: 42%;
+    bottom: 80%;
+  }
+  &.index2 {
+    top: 15%;
+    right: 22%;
+  }
+  &.index3 {
+    top: 24%;
+    right: 17%;
+  }
+  &.index4 {
+    bottom: 17%;
+    left: 65%;
+  }
+}
+.diagramKeyBig {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.diagramValueBig {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-main);
+  white-space: nowrap;
+  background: var(--linear-gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blink 0.8s infinite alternate;
+}
+.bigTxt {
+  font-size: 6rem;
+}
+.diagramKey {
+  font-size: 1.375rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.diagramValue {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #aaa;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+   100% {
+    opacity: 1;
+  }
+}
+
+
+
+// 반응형
+@media (max-width: 1280px) {
+  .smile {
+    width: 2.5rem;
+  }
+  .diagramBox {
+    height: 35rem;
+  }
+  .diagramImgBox {
+    width: 35rem;
+    height: 35rem;
+  }
+  .diagramTxtBoxWrap {
+    width: 35rem;
+    height: 35rem;
+  }
+  .diagramKeyBig {
+    font-size: 2.5rem;
+  }
+  .diagramValueBig {
+    font-size: 3rem;
+  }
+  .bigTxt {
+    font-size: 5rem;
+  }
+  .diagramKey {
+    font-size: 1.2rem;
+  }
+  .diagramValue {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .wrap {
+    padding: 7rem 2.813rem 7rem;
+  }
+  .titleBox {
+    padding-bottom: 5rem;
+  }
+  .smile {
+    width: 1.8rem;
+  }
+  .diagramBox {
+    height: 32rem;
+  }
+  .diagramImgBox {
+    width: 27rem;
+    height: 27rem;
+  }
+  .diagramTxtBoxWrap {
+    width: 27rem;
+    height: 27rem;
+  }
+  .diagramTxtBox {
+    &.index0 {
+      right: 60%;
+    }
+    &.index4 {
+      bottom: 13%;
+      left: 55%;
+    }
+  }
+  .diagramKeyBig {
+    font-size: 1.8rem;
+  }
+  .diagramValueBig {
+    font-size: 2rem;
+  }
+  .bigTxt {
+    font-size: 3.2rem;
+  }
+  .diagramKey {
+    font-size: 1rem;
+  }
+  .diagramValue {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+  .titleBox {
+    padding-bottom: 3rem;
+  }
+  .smile {
+    width: 1.4rem;
+  }
+  .diagramBox {
+    height: 28rem;
+  }
+  .diagramImgBox {
+    width: 22rem;
+    height: 22rem;
+  }
+  .diagramTxtBoxWrap {
+    width: 22rem;
+    height: 22rem;
+  }
+  .diagramTxtBox {
+    &.index0 {
+      top: -5%;
+      right: 55%;
+    }
+    &.index1 {
+      right: 39%;
+      bottom: 83%;
+    }
+    &.index2 {
+      top: 10%;
+      right: 15%;
+    }
+    &.index3 {
+      top: 20%;
+      right: 14%;
+    }
+    &.index4 {
+      bottom: 9%;
+      left: 45%;
+    }
+  }
+  .diagramKeyBig {
+    font-size: 1.8rem;
+  }
+  .diagramValueBig {
+    font-size: 1.6rem;
+  }
+  .bigTxt {
+    font-size: 2.8rem;
+  }
+  .diagramKey {
+    font-size: 1rem;
+  }
+  .diagramValue {
+    font-size: 1rem;
+  }
+  .diagramSubTxt {
+    font-size: 0.875rem;
+  }
+}

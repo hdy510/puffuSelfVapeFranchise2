@@ -1,0 +1,79 @@
+.container {
+  width: 100%;
+  background-image: url("../resources/bgShine.png");
+  background-size: cover;
+  background-position: center center;
+}
+.wrap {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 2.813rem 10rem;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.375rem;
+}
+.title {
+  font-size: clamp(2rem, 4vw, var(--title-font-size));
+  font-weight: 700;
+}
+.orangeText {
+  color: var(--color-main);
+  // font-size: 4.2rem;
+  font-size: clamp(3rem, 6vw, 4.2rem);
+  background: var(--linear-gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subTitle {
+  font-size: clamp(1.2rem, 1.7vw, var(--subTitle-font-size));
+}
+.subOrangeText {
+  color: var(--color-main);
+  font-size: clamp(1.7rem, 3vw, 2rem);
+  background: var(--linear-gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+// 반응형
+@media (max-width: 768px) {
+  .wrap {
+    padding: 6rem 1.25rem 6rem;
+  }
+  .title {
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
+  }
+  .orangeText {
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+  }
+  .subTitle {
+    font-size: clamp(1.2rem, 2vw, 1.2rem);
+  }
+  .subOrangeText {
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+  }
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding: 4rem 1.25rem 4rem;
+  }
+  .title {
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+  .orangeText {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+  }
+  .subTitle {
+    font-size: clamp(0.875rem, 1.7vw, 1rem);
+  }
+  .subOrangeText {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+}
