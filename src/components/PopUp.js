@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./PopUp.module.scss";
-import popUp1 from "../resources/popUp1.png";
-import popUp2 from "../resources/popUp2.png";
-import popUp3 from "../resources/popUp3.png";
+// import popUp1 from "../resources/popUp1.png";
+// import popUp2 from "../resources/popUp2.png";
+// import popUp3 from "../resources/popUp3.png";
+import popUp1 from "../resources/popUp1.gif";
+import popUp2 from "../resources/popUp2.gif";
+import popUp3 from "../resources/popUp3.gif";
 
 function PopUp({ onClose }) {
   const [popups, setPopups] = useState([
