@@ -10,17 +10,24 @@ function BottomNav() {
   // 모바일 엣지브라우저 인풋 클릭 시 키보드 올라오면서 하단 주소창 사라져서 발생하는 하얀 여백 문제 처리
   const bottomNavRef = useRef(null);
   useEffect(() => {
-    const onResize = () => {
-      if (!bottomNavRef.current) return;
-      if (window.innerHeight < window.screen.height) {
+    const onFocusIn = () => {
+      if (bottomNavRef.current) {
         bottomNavRef.current.style.position = "absolute";
-      } else {
+      }
+    };
+    const onFocusOut = () => {
+      if (bottomNavRef.current) {
         bottomNavRef.current.style.position = "fixed";
       }
     };
   
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("focusin", onFocusIn);
+    window.addEventListener("focusout", onFocusOut);
+  
+    return () => {
+      window.removeEventListener("focusin", onFocusIn);
+      window.removeEventListener("focusout", onFocusOut);
+    };
   }, []);
   // -끝-
 
