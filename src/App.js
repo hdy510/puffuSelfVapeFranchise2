@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Header from './components/Header';
 import Section1 from './components/Section1';
 import Section2 from './components/Section2';
@@ -32,23 +32,8 @@ function App() {
   // 팝업 상태
   const [ isPopUpOpen, setIsPopUpOpen ] = useState(true);
 
-  useEffect(() => {
-    const viewport = window.visualViewport;
-    if (!viewport) return;
-
-    const handler = () => {
-      document.body.style.height = viewport.height + "px";
-      document.documentElement.style.height = viewport.height + "px";
-    };
-
-    viewport.addEventListener("resize", handler);
-    handler();
-
-    return () => viewport.removeEventListener("resize", handler);
-  }, []);
 
   return (
-    
     <>
       <Header
         section2Ref={section2Ref}
