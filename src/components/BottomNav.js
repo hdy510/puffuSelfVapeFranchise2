@@ -20,12 +20,12 @@ function BottomNav() {
 
     const handleFocus = () => {
       const viewport = window.visualViewport;
-      if (viewport) {
-        const keyboardHeight = window.innerHeight - viewport.height;
-        setBottomOffset(keyboardHeight > 0 ? keyboardHeight : 300);
-      } else {
-        setBottomOffset(300);
-      }
+      // if (viewport) {
+      //   const keyboardHeight = window.innerHeight - viewport.height;
+      //   setBottomOffset(keyboardHeight > 0 ? keyboardHeight : 300);
+      // } else {
+        setBottomOffset(-300);
+      // }
     };
 
     const handleBlur = () => {
