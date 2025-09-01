@@ -19,13 +19,11 @@ export default function useBottomNavFix() {
     };
 
     viewport.addEventListener("resize", handler);
-    viewport.addEventListener("scroll", handler);
 
     handler(); // 초기 실행
 
     return () => {
       viewport.removeEventListener("resize", handler);
-      viewport.removeEventListener("scroll", handler);
     };
   }, []);
 
