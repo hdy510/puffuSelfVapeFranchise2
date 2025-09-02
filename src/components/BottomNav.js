@@ -7,6 +7,44 @@ import iconPhoneOrange from "../resources/iconPhoneOrange.png";
 function BottomNav() {
   const form = useRef();
 
+  const [bottomOffset, setBottomOffset] = useState(0);
+
+  // Edge + 모바일 환경 감지
+  const isMobile = /Mobi/i.test(navigator.userAgent);
+  const isEdge = /Edg/i.test(navigator.userAgent);
+
+  useEffect(() => {
+    if (!(isMobile && isEdge)) return;
+
+    const inputs = document.querySelectorAll("input, textarea");
+
+    const handleFocus = () => {
+      const viewport = window.visualViewport;
+      // if (viewport) {
+      //   const keyboardHeight = window.innerHeight - viewport.height;
+      //   setBottomOffset(keyboardHeight > 0 ? keyboardHeight : 300);
+      // } else {
+        setBottomOffset(-56);
+      // }
+    };
+
+    const handleBlur = () => {
+      setBottomOffset(0);
+    };
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", handleFocus);
+      input.addEventListener("blur", handleBlur);
+    });
+
+    return () => {
+      inputs.forEach((input) => {
+        input.removeEventListener("focus", handleFocus);
+        input.removeEventListener("blur", handleBlur);
+      });
+    };
+  }, [isMobile, isEdge]);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -37,7 +75,9 @@ function BottomNav() {
   };
   
   return (
-      <div className={styles.container}>
+      <div className={styles.container}
+      style={{ bottom: `${bottomOffset}px` }}
+      >
         <div className={styles.wrap}>
           <div className={styles.phoneBox}>
             <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />
