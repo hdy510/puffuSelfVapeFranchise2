@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./BottomNav.module.scss";
 import iconPhone from "../resources/iconPhone.png";
@@ -6,49 +6,36 @@ import iconPhoneOrange from "../resources/iconPhoneOrange.png";
 
 function BottomNav() {
   const form = useRef();
-
-  const [bottomOffset, setBottomOffset] = useState(0);
-
-  // Edge + 모바일 환경 감지
-  const isMobile = /Mobi/i.test(navigator.userAgent);
-  const isEdge = /Edg/i.test(navigator.userAgent);
-
-  useEffect(() => {
-    if (!(isMobile && isEdge)) return;
-
-    const inputs = document.querySelectorAll("input, textarea");
-
-    const handleFocus = () => {
-      const viewport = window.visualViewport;
-      // if (viewport) {
-      //   const keyboardHeight = window.innerHeight - viewport.height;
-      //   setBottomOffset(keyboardHeight > 0 ? keyboardHeight : 300);
-      // } else {
-        setBottomOffset(-56);
-      // }
-    };
-
-    const handleBlur = () => {
-      setBottomOffset(0);
-    };
-
-    inputs.forEach((input) => {
-      input.addEventListener("focus", handleFocus);
-      input.addEventListener("blur", handleBlur);
-    });
-
-    return () => {
-      inputs.forEach((input) => {
-        input.removeEventListener("focus", handleFocus);
-        input.removeEventListener("blur", handleBlur);
-      });
-    };
-  }, [isMobile, isEdge]);
+  const [ showModal, setShowModal ] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     const formData = new FormData(form.current);
+    if (!formData.get("이름")) {
+      alert("성함을 입력해 주세요.");
+      return;
+    }
+    const phone = formData.get("연락처");
+    const phoneRegex = /^[0-9]+$/;
+    if (!phone) {
+      alert("연락처를 입력해 주세요.");
+      return;
+    }
+    if (!phoneRegex.test(phone)) {
+      alert("연락처는 숫자만 입력해 주세요.");
+      return;
+    }
+    const email = formData.get("email");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      alert("이메일을 입력해 주세요.");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      alert("올바른 이메일 주소 형식을 입력해 주세요.");
+      return;
+    }
     if (!formData.get("privacy_agree")) {
       alert("개인정보처리방침에 동의해주세요.");
       return;
@@ -75,9 +62,7 @@ function BottomNav() {
   };
   
   return (
-      <div className={styles.container}
-      style={{ bottom: `${bottomOffset}px` }}
-      >
+      <div className={styles.container}>
         <div className={styles.wrap}>
           <div className={styles.phoneBox}>
             <img src={iconPhoneOrange} alt="전화 아이콘" className={styles.phoneIcon} />
@@ -123,6 +108,11 @@ function BottomNav() {
                 type="checkbox"
                 name="privacy_agree"
                 className={styles.agreeBoxInput}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setShowModal(true);
+                  }
+                }}
               />
               개인정보처리방침 동의
             </label>
@@ -133,6 +123,35 @@ function BottomNav() {
             </button>
           </form>
         </div>
+
+        {showModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <h4 className={styles.heading4}>개인정보처리방침</h4>
+            <div className={styles.modalContentWrap}>
+              <p className={styles.modalContentText}>
+              개인정보 수집 범위: 이름, 연락처, 이메일 주소<br/><br/>
+  
+  개인정보 수집 및 이용목적: 브랜드 가맹점주 모집, 온라인 문의 및 상담 자료와 결과 회신<br/><br/>
+  
+  개인정보의 보유 및 이용기간: 수집일로부터 3년간 보유 및 이용<br/><br/>
+  
+  개인정보의 제3자 제공: 개인정보는 본사의 유관 부서와 매장 관리자(슈퍼바이저, 매장점주)에게 제공될 수 있습니다.<br/><br/>
+  
+  정보주체의 권리 및 행사 방법: 정보주체는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지 요구 등을 할 수 있습니다. 이러한 요구는 [담당 부서]를 통해 가능합니다.<br/><br/>
+  
+  개인정보 보호책임자: 허준: puffuofficial@gmail.com<br/><br/>
+  
+  매장과 관련된 CS의 경우, 해결과정 안내 혹은 결과 회신을 위해 매장 관리자(슈퍼바이저, 매장점주), 본사 유관부서가 연락을 드릴 수 있습니다.<br/><br/>
+  
+  [정보통신망 이용촉진 및 정보 보호 등에 관한 법률]
+  제 74조 1항 3호에 따라 '공포심'이나 '불안감'을 유발하는 심한 욕설, 비하, 협박성 내용이 담긴 내용을 반복적으로 기재할 시, 처벌될 수 있는 점, 안내드립니다.
+              </p>
+            </div>
+            <button className={styles.confirmBtn} onClick={() => setShowModal(false)}>확인</button>
+          </div>
+        </div>
+      )}
       </div>
   );
 }

@@ -6,7 +6,6 @@
   left: 0;
   z-index: 1000;
   background-color: #212225;
-  transition: bottom 0.3s;
 }
 .wrap {
   max-width: 80rem;
@@ -25,6 +24,7 @@
 .phoneNumber {
   font-size: 1.125rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 .formBox {
   width: 80%;
@@ -62,6 +62,10 @@
   cursor: pointer;
   // width: inherit;
   width: 80rem;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
 .agreeBoxInput {
   margin-right: 0.8rem;
@@ -94,6 +98,75 @@
   white-space: nowrap;
 }
 
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); // 반투명 검은 배경
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // 다른 요소 위로
+}
+.modalContent {
+  background: #fff;
+  border-radius: 0.8rem;
+  padding: 1.4rem 1.2rem;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.3s ease;
+}
+.heading4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  color: #212225;
+}
+.modalContentWrap {
+  max-height: 20rem;
+  overflow: scroll;
+  margin-bottom: 1rem;
+}
+.modalContentText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3a3a3a;
+  padding-bottom: 1.5rem;
+}
+.confirmBtn {
+  background-color: var(--color-main);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: GmarketSans, sans-serif;
+  font-weight: 700;
+  &:active {
+    background-color: var(--color-main-active);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+// 반응형
 @media (max-width: 1280px) {
   .phoneBox {
     gap: 0.5rem;

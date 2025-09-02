@@ -26,6 +26,7 @@ import meritMobile04b from "../resources/meritMobile04b.png";
 import meritMobile04c from "../resources/meritMobile04c.png";
 import meritMobile05a from "../resources/meritMobile05a.png";
 import meritMobile05b from "../resources/meritMobile05b.png";
+import smileWhite from "../resources/smileWhite.png";
 
 import { useScrollFadeIn } from "../utils/useScrollFadeIn";
 import { useResponsive } from "../utils/useResponsive";
@@ -47,7 +48,10 @@ const Section4 = forwardRef((props, ref) => {
             <img src={isMobile ? meritMobile01a : merit01a} alt="공장에서 도매처를 점주에게 공급" className={styles.detailImg} />
           </div>
           <div className={styles.detailSubBox}>
-            <p className={`${styles.roundTitle} ${styles.orange}`}>위탁판매</p>
+            <p className={`${styles.roundTitle} ${styles.orange}`}>
+              푸푸
+              <img src={smileWhite} alt="푸푸 스마일 로고" className={styles.smileImg} />
+            </p>
             <img src={isMobile ? meritMobile01b : merit01b} alt="공장에서 점주에게 직접 공급" className={styles.detailImg} />
           </div>
         </div>

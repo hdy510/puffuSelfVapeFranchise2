@@ -125,9 +125,15 @@
     background-color: #373741;
     border-radius: 6.25rem;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     &.orange {
       background-color: var(--color-main);
     }
+  }
+  .smileImg {
+    width: clamp(1rem, 1.5vw, 1.3rem);
   }
   .detailSubBox {
     display: flex;

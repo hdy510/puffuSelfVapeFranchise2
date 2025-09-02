@@ -10,11 +10,35 @@ const Section14 = forwardRef((props, ref) => {
     e.preventDefault();
 
     const formData = new FormData(form.current);
+    if (!formData.get("이름")) {
+      alert("성함을 입력해 주세요.");
+      return;
+    }
+    const phone = formData.get("연락처");
+    const phoneRegex = /^[0-9]+$/;
+    if (!phone) {
+      alert("연락처를 입력해 주세요.");
+      return;
+    }
+    if (!phoneRegex.test(phone)) {
+      alert("연락처는 숫자만 입력해 주세요.");
+      return;
+    }
+    const email = formData.get("email");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      alert("이메일을 입력해 주세요.");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      alert("올바른 이메일 주소 형식을 입력해 주세요.");
+      return;
+    }
     if (!formData.get("privacy_agree")) {
       alert("개인정보처리방침에 동의해주세요.");
       return;
     }
-
+    
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -43,6 +67,7 @@ const Section14 = forwardRef((props, ref) => {
         <div className={styles.bottomBox}>
           <form
             ref={form}
+            noValidate
             className={styles.formBox}
             onSubmit={sendEmail}
           >
@@ -82,7 +107,7 @@ const Section14 = forwardRef((props, ref) => {
                   />
                 </div>
             </div>
-            <div className={styles.inputSection}>
+            {/* <div className={styles.inputSection}>
                 <p className={styles.inputLabel}>지역</p>
                 <div className={styles.inputBox}>
                   <input
@@ -93,7 +118,7 @@ const Section14 = forwardRef((props, ref) => {
                     className={styles.inputTag}
                   />
                 </div>
-            </div>
+            </div> */}
             <div className={styles.privacyBox}>
               <textarea
                 readOnly
