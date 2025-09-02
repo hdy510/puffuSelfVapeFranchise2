@@ -38,7 +38,7 @@ const Section14 = forwardRef((props, ref) => {
       alert("개인정보처리방침에 동의해주세요.");
       return;
     }
-    
+
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
